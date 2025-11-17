@@ -20,6 +20,7 @@ const CustomerList = () => {
 
     return (
         <table style={{ marginTop: "1px", border: "1px white"}}>
+            <caption><h1> Lista de compradores </h1></caption>
             <thead>
                 <tr>
                     <th>| ID |</th>

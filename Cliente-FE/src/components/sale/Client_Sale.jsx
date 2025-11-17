@@ -20,6 +20,7 @@ const ClientSale = () => {
 
     return (
         <table style={{ marginTop: "1px", border: "1px white"}}> 
+            <caption><h1> Ventas por cliente </h1></caption>
             <thead>
                 <tr>
                     <th> | Cliente |</th>
