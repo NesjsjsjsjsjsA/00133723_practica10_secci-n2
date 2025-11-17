@@ -14,7 +14,6 @@ const App = () => (
       <Route path="/add-sale" element={<Customer_Sale />} />
       <Route path="/sales" element={<SaleList />} />
       <Route path="/sales-per-client" element={<ClientSale />} />
-
     </Routes>
   </Router>
 );
