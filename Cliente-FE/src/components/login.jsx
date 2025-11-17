@@ -9,7 +9,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await API.post("/signin", { email, password });
+      const response = await API.post("/signIn", { email, password });
       localStorage.setItem("token", response.data.token);
       alert("Login successful!");
     } catch (err) {
@@ -18,6 +18,7 @@ const Login = () => {
   };
 
   return (
+
     <form onSubmit={handleLogin}>
       <input
         type="email"
@@ -34,6 +35,7 @@ const Login = () => {
       <button type="submit">Login</button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </form>
+    
   );
 };
 

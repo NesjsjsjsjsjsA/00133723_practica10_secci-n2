@@ -9,6 +9,13 @@ import {
   deleteUser,
 } from "../controllers/comd.js";
 
+import { 
+  getCostumers,
+  getCustomerByCode 
+} from "../controllers/comdC.js";
+
+import { getSales,createSale, getSalePerClient } from "../controllers/comdS.js";
+
 import { signIn } from "../controllers/signIn.js";
 
 import { verifyToken } from "../Security/sends.js";
@@ -38,5 +45,15 @@ router.post("/users", verifyToken, createUser);
 router.put("/users/:id", verifyToken, updateUsers);
 
 router.delete("/users/:id", verifyToken, deleteUser);
+
+router.get("/customers", verifyToken, getCostumers);
+
+router.get("/customers/:code", verifyToken, getCustomerByCode);
+
+router.get("/sales", verifyToken, getSales);
+
+router.post("/sales", verifyToken, createSale);
+
+router.get("/sales-per-client", verifyToken, getSalePerClient);
 
 export default router;
