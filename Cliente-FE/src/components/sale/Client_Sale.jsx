@@ -19,14 +19,14 @@ const ClientSale = () => {
     }, []);
 
     return (
-        <table>
+        <table style={{ marginTop: "1px", border: "1px white"}}> 
             <thead>
                 <tr>
-                    <th> Cliente |</th>
+                    <th> | Cliente |</th>
                     <th> | Total Ventas |</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style={{backgroundColor: "#96D4D4", border: "1px white", textAlign: "center", color: "black"}}>
                 {sale.map((c) => (
                     <tr key={c.id}>
                         <td>{c.name}</td>

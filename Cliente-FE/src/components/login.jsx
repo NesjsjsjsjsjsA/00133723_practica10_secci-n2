@@ -19,23 +19,31 @@ const Login = () => {
 
   return (
 
-    <form onSubmit={handleLogin}>
+    <form style={{textAlign: "center"}} onSubmit={handleLogin}>
+      <h1>Inicio de sesion</h1>
       <input
+        style={{marginLeft: "10px"}}
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
+        style={{marginLeft: "10px"}}
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="submit">Login</button>
+
+      <p></p>
+
+      <button
+        style={{ backgroundColor: "#4CAF50", color: "white", padding: "10px 10px", border: "none", borderRadius: "10px", cursor: "crosshair" }}
+        type="submit"> Acceder! </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </form>
-    
+
   );
 };
 

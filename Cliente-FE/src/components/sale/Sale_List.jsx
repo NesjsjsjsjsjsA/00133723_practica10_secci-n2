@@ -19,7 +19,7 @@ const SaleList = () => {
     }, []);
 
     return (
-        <table>
+        <table style={{ marginTop: "1px", border: "1px white"}}>
             <thead>
                 <tr>
                     <th>ID |</th>
@@ -28,7 +28,7 @@ const SaleList = () => {
                     <th>| Cliente | </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style={{backgroundColor: "#96D4D4", border: "1px white", textAlign: "center", color: "black"}}>
                 {sales.map((c) => (
                     <tr key={c.id}>
                         <td>{c.id}</td>
