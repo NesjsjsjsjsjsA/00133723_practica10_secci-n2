@@ -7,14 +7,18 @@ import {
   createUser,
   updateUsers,
   deleteUser,
-} from "../controllers/comd.js";
+} from "../controllers/users/comd.js";
 
 import { 
-  getCostumers,
+  getCostumers, 
   getCustomerByCode 
-} from "../controllers/comdC.js";
+} from "../controllers/costumers/comdC.js";
 
-import { getSales,createSale, getSalePerClient } from "../controllers/comdS.js";
+import {
+  getSales,
+  createSale,
+  getSalePerClient,
+} from "../controllers/sales/comdS.js";
 
 import { signIn } from "../controllers/signIn.js";
 
@@ -24,13 +28,13 @@ import { answerCall } from "../BDD/psql.js";
 
 const router = express.Router();
 
-answerCall().then((ok) =>{
+answerCall().then((ok) => {
   if (ok) {
     console.log("Conexión a la base de datos exitosa");
   } else {
     console.log("Error en la conexión a la base de datos");
   }
-})
+});
 
 router.get("/", displayHome);
 

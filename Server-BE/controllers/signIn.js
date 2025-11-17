@@ -2,7 +2,7 @@ import { Comphashing } from "../Tools/crypt.js";
 
 import { signToken } from "../Security/sends.js";
 
-import { getUserID, getRealUser } from "../controllers/auxcomd.js";
+import { getUserID, getRealUser } from "./users/User.js";
 
 export const signIn = async (req, res) => {
   const { email, password } = req.body;

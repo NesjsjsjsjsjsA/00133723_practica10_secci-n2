@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/api";
+import API from "../../utils/api";
 
-const ClientSale = () => {
-    const [sale, setSale] = useState([]);
+const CustomerList = () => {
+    const [customers, setCustomers] = useState([]);
     const [error, setError] = useState("");
 
     useEffect(() => {
         const fetchCustomers = async () => {
             try {
-                const response = await API.get("/sales-per-client");
-                setSale(response.data);
+                const response = await API.get("/customers");
+                setCustomers(response.data);
             } catch (err) {
                 setError(err.response?.data?.message || "Failed to fetch customers!");
             }
@@ -22,15 +22,21 @@ const ClientSale = () => {
         <table>
             <thead>
                 <tr>
-                    <th> Cliente |</th>
-                    <th> | Total Ventas |</th>
+                    <th>ID |</th>
+                    <th> | Nombre |</th>
+                    <th> | Dirección |</th>
+                    <th> | Teléfono |</th>
+                    <th> | Código |</th>
                 </tr>
             </thead>
             <tbody>
-                {sale.map((c) => (
+                {customers.map((c) => (
                     <tr key={c.id}>
+                        <td>{c.id}</td>
                         <td>{c.name}</td>
-                        <td>{c.total_sales}</td>
+                        <td>{c.address}</td>
+                        <td>{c.phone}</td>
+                        <td>{c.code}</td>
                     </tr>
                 ))}
             </tbody>
@@ -39,4 +45,4 @@ const ClientSale = () => {
 
 }
 
-export default ClientSale;
+export default CustomerList;

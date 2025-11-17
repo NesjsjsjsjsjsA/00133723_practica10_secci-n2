@@ -1,19 +1,22 @@
-import { pool } from "../BDD/psql.js";
+import { pool } from "../../BDD/psql.js";
 
-import { getCostumersByID } from "./comdC.js";
+import { getCostumersByID } from "../costumers/Costumer.js";
 
 export const getSales = async (req, resp) => {
-  const results = await pool.query("SELECT s.id, s.amount, s.created_at, c.name FROM sales s JOIN customers c ON s.id_customer = c.id");
+  const results = await pool.query(
+    "SELECT s.id, s.amount, s.created_at, c.name FROM sales s JOIN customers c ON s.id_customer = c.id"
+  );
   resp.json(results.rows);
 };
 
 export const getSalePerClient = async (req, resp) => {
-  const results = await pool.query("SELECT c.name, SUM(s.amount) AS total_sales FROM sales s JOIN customers c ON s.id = c.id GROUP BY c.name");
+  const results = await pool.query(
+    "SELECT c.name, SUM(s.amount) AS total_sales FROM sales s JOIN customers c ON s.id = c.id GROUP BY c.name"
+  );
   resp.json(results.rows);
-}
+};
 
 export const createSale = async (req, resp) => {
-
   const { id_customer, amount } = req.body;
 
   const validSaleId = await getCostumersByID(id_customer);
@@ -29,5 +32,3 @@ export const createSale = async (req, resp) => {
 
   resp.status(201).json(results.rows[0]);
 };
-
-

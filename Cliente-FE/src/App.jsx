@@ -1,10 +1,10 @@
 //import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login"
-import CustomerList from "./components/CustomerList";
-import Customer_Sale from "./components/Customer_Sale";
-import SaleList from "./components/Sale_List";
-import ClientSale from "./components/Client_Sale";
+import CustomerList from "./components/customer/CustomerList.jsx";
+import Customer_Sale from "./components/customer/Customer_Sale.jsx";
+import SaleList from "./components/sale/Sale_List.jsx";
+import ClientSale from "./components/sale/Client_Sale.jsx";
 
 const App = () => (
   <Router>

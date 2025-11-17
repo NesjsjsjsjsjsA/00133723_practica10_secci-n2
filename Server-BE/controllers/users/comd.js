@@ -1,6 +1,8 @@
-import { pool } from "../BDD/psql.js";
+import { pool } from "../../BDD/psql.js";
 
-import { hashing } from "../Tools/crypt.js";
+import { hashing } from "../../Tools/crypt.js";
+
+export const Poll = {pool} 
 
 export const displayHome = (req, resp) => {
   resp.send("Beinvendio al mundo PSQL!");

@@ -1,4 +1,4 @@
-import { pool } from "../BDD/psql.js";
+import { pool } from "../../BDD/psql.js";
 
 export const getPassWord = async (email) => {
   const {rows} = await pool.query(
@@ -22,3 +22,4 @@ export const getRealUser = async (email) => {
   );
   return rows.length > 0 ? rows[0].email : null;
 };
+
